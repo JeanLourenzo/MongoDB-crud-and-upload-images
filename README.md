@@ -5,6 +5,6 @@ Tutorial:
 
 1 - Dentro do mongoDB criar o banco e duas collections de nome: "prontuarios" e "arquivos",
 
-2 - no prompt dentro da pasta principal instalar as dependencias digitando: npm install,
+2 - no prompt(Necessário NodeJS instalado) dentro da pasta principal instalar as dependencias digitando: npm install,
 
 3 - no prompt node app or npm start, para rodar.
