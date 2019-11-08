@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Sistema Médico</title>
+    <link rel="stylesheet" href="/recursos/cadastro.css">
+</head>
+
+<body>
+
+    <% points.forEach(function(details) { %>
+    <div class="wrapper">
+
+        <section class="header">
+            <h1>Prontuario</h1>
+        </section>
+
+        <main>
+            <form action="">
+                <div class="input-group">
+                    <label for="nome">Nome:</label>
+                    <%= details.nome %> <%= details.sobrenome %>
+                </div>
+
+                <div class="input-group">
+                    <label for="rg">RG:</label>
+                    <%= details.rg %>
+                </div>
+
+                <div class="input-group">
+                    <label for="cpf">CPF:</label>
+                    <%= details.cpf %>
+                </div>
+                <div class="input-group">
+                    <label for="endereco">Endereço:</label>
+                    <%= details.endereco %>
+                </div>
+                <div class="input-group">
+                    <label for="queixa">Queixa principal do paciente:</label>
+                    <%= details.queixa %>
+                    <div class="input-group">
+                    </div>
+
+                    <% types.forEach(function(details) { %>
+                    <div class="exames">
+
+                        <form action="">
+                            <div class="input-group">
+                                <label for="nome_exame">Exame:</label>
+                                <%= details.nome_exame %>
+                            </div>
+                            <button><a href="/deleteImagem/<%= details._id %>">Deletar</a></button>
+                            <button><a href="/visualizar/<%= details._id %>" method="GET">Visualizar</a></button>
+                    </div>
+                    <% }) %>
+
+                    <div>
+                        </form><br><br>
+
+                        <form id="formularioUpload" action="/upload/<%= details._id %>" method="POST" enctype="multipart/form-data">
+                            <p>Anexar novo Exame:</p>
+                            <input type="text" name="name" placeholder="Nome do Exame" /><br />
+                            <input type="file" name="uploadedFile" /> <br /> <br />
+                            <input type="submit" value="Upload File" />
+                        </form>
+
+                        <br><br>
+                        <button><a href="/edit/<%= details._id %>">Editar Prontuario</a></button>
+                        <button><a href="/">Voltar</a></button><br>
+                    </div>
+                    
+            </main>
+
+
+    </div>
+
+    <% }) %>
+
+
+
+
+
+
+
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Sistema Médico</title>
+    <link rel="stylesheet" href="/recursos/cadastro.css">
+</head>
+
+<body>
+        <section class="header">
+                <h1>Pacientes</h1>
+    
+            </section>
+
+        <% prontuarios.forEach(function(details) { %>
+    <div class="wrapper">
+
+ 
+            <form action="">
+                <div class="input-group">
+                    <label for="nome">Nome:</label>
+                    <%= details.nome %> <%= details.sobrenome %>
+                </div>
+                <div class="input-group">
+                        <label for="cpf">CPF:</label>
+                        <%= details.cpf %>
+                    </div>
+
+                <a href="/show/<%= details._id %>">Ver Prontuario</a> - <a href="/delete/<%= details._id %>">Deletar
+                    Prontuario</a>
+
+            </form><br><br>
+            <% }) %>
+
+            <form> <button><a href="/NovoCadastro">Cadastrar novo Paciente</a></button><br> </form>
+           
+    
+
+    </div>
+
+ 
+</body>
+
+</html>

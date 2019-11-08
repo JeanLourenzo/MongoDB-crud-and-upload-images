@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<title>Sistema Médico</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width">
+	<link rel="stylesheet" href="/recursos/cadastro.css">
+	<script src="/recursos/cadastro.js"></script>
+</head>
+
+<body>
+	<div class="wrapper">
+
+		<section class="header">
+			<h1>Cadastro do Paciente</h1>
+		</section>
+
+		<main>
+			<form action="/NovoCadastro" method="POST">
+				<div class="input-group">
+					<label for="nome">Nome</label>
+					<input type="text" id='nome' name='nome' tab-index='1' />
+				</div>
+				<div class="input-group">
+					<label for="sobrenome">Sobrenome</label>
+					<input type="text" id='sobrenome' name='sobrenome' tab-index='2' />
+				</div>
+				<div class="input-group">
+					<label for="rg">RG</label>
+					<input type="text" id='rg' name='rg' tab-index='3' />
+				</div>
+
+				<div class="input-group">
+					<label for="cpf">CPF</label>
+					<input type="text" id='cpf' name='cpf' tab-index='4' />
+				</div>
+				<div class="input-group">
+					<label for="endereco">Endereço</label>
+					<input type="text" id='endereco' name='endereco' tab-index='3' />
+				</div>
+				<div class="input-group">
+					<label for="queixa">Queixa principal do paciente</label>
+					<textarea id='queixa' name='queixa' tab-index='5'></textarea>
+					<div class="input-group">
+						<input type="submit" value="Cadastrar" tab-index='6' />
+					</div>
+			</form>
+		</main>
+
+	</div>
+	
+</body>
+
+</html>

@@ -1,0 +1,114 @@
+body {
+    font: 400 .8em/1.2em 'Montserrat', sans-serif;
+    color: #333;
+    background: white;  
+  }
+
+  main {  
+    margin: 0 9px;
+    float: left;
+    width: calc(100% * 2 / 3 - 20px);
+  }
+  
+  .header{
+    font-size: 33px;
+    display: block;
+    width: 100%;
+    text-align: center;
+  }
+
+  .wrapper {    
+    bottom: 50%;
+  }
+
+  form {
+    display: block;
+    width: 55%;
+    margin: 0 auto;
+  }
+  .input-group {
+    margin: 20px 10px;
+  }
+  label {
+    display: block;
+    position: relative;
+    top: -5px;
+    font-size: .9em;
+    color: rgba(0,0,0,.5);
+    letter-spacing: .5px;
+  }
+  input, textarea {
+    display: block;
+    width: 96%;
+    padding: 5px;
+    border: 1px solid rgba(0,0,0,.1);
+    border-radius: 3px;  
+  }
+  input:focus, textarea:focus{
+    outline: 0;
+    box-shadow: 0 0 3px #5FA7D3;
+    border: 1px solid #5FA7D3;
+  }
+  textarea {
+    resize: none;
+    height: 100px;
+  }
+
+  input[type='submit'] {
+    background: #5FA7D3;
+    box-shadow: 0 3px 0 #448FBD;
+    color: #fff;
+    width: 100%;
+    border: 1px solid #5FA7D3;
+  }
+  input[type='submit']:focus {
+    box-shadow: none;
+    cursor: pointer;
+  }
+
+  .content {
+    margin: 15px 10px;
+    color: rgba(0,0,0,.5);
+    letter-spacing: .5px;
+    line-height: 1.4em;
+  }
+  .subscribed {
+    display: block;
+    height: 0;
+    overflow: hidden;
+  }
+  p {
+    margin-bottom: 20px;
+  }
+  strong {
+    font-weight: 700;
+  }
+  nav a {
+    text-decoration: none;
+    color: #5FA7D3;
+    float: left;
+    margin-right: 15px;
+    transition: opacity .25s ease-in-out;
+  }
+  .social {
+    display: block;
+    width: 100%;
+    border-bottom: 1px solid #efefef;
+  }
+  nav a:hover {
+    opacity: .5;  
+  }
+  
+  #formularioUpload{
+
+    left: -23%;
+    position: relative;
+
+  }
+
+  .exames{
+
+  background-color: #efefef;
+
+  }
+
