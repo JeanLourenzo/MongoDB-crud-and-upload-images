@@ -44,7 +44,7 @@ app.route('/NovoCadastro')
   })
 
   .post(function (req, res) {
-    db.collection('prontuarios').save(req.body, function (err, result) {
+    db.collection('prontuarios').insertOne(req.body, function (err, result) {
 
       if (err) {
         return console.log(err)
@@ -127,7 +127,12 @@ app.route('/delete/:id')
         return res.send(500, err)
       }
       console.log('Deletado do Banco de Dados!')
-      res.redirect('/')
+    
+     //db.arquivos.deleteOne({ id_paciente:ObjectId("5dc1cdafceaab60e9c30f094") })
+     db.collection('arquivos').deleteMany({ id_paciente:ObjectId(id) });
+
+     console.log('Deletado do Arquivos!')
+     res.redirect('/')
     })
   })
 
@@ -171,7 +176,7 @@ app.route('/visualizar/:id')
       let buffer = doc[0].imagem_exame.buffer // buffer da imagem -------- <Buffer ff d8 ff e0 00 10 4a.....>
       let nome = doc[0].nome_exame
 
-      var s = binary(buffer); // Retorna um grid -------- Binary { _bsontype: 'Binary', sub_type 0, position: 20905, buffer <Buffer ff d8 ff e0 00....}
+      var s = binary(buffer); // Retorna um json binário (grid) -------- Binary { _bsontype: 'Binary', sub_type 0, position: 20905, buffer <Buffer ff d8 ff e0 00....}
 
       var a = JSON.stringify(s); // do json para string -------- "/9j/4AAQSkZJRgABAQEASABIAAD/2wBDAA.......4KP1P/2!=="
 
@@ -179,29 +184,10 @@ app.route('/visualizar/:id')
      
       var z = "<img src=\"data:image/gif;base64," + ret + "><br><h3>Nome do Exame: " + nome +"</h3>"; // Acopla na string de dados o formato base64 para renderizar a imagem em html
 
-      console.log(doc);
+      console.log(s);
 
       res.send( z );
      //res.status(204).render(z);
 
     })
   })
-
-/* Faz o mesmo que acima, de uma maneira mais simples.
-
-  app.route('/visu/:id')
-
-  .get(function (req, res) {
-    var id = req.params.id
-
-    db.collection('arquivos').find({ _id: ObjectId(id) }).toArray((err, doc) => {
-
-      let buffer = doc[0].imagem_exame.buffer // buffer da imagem -------- <Buffer ff d8 ff e0 00 10 4a.....>
-      
-      res.setHeader('content-type', 'image/jpg');
-      res.send(buffer);
-
-    })
-  })
-
-  */
